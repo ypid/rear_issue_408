@@ -4,5 +4,5 @@ Date:   Fri May 9 08:25:21 2014
 
     changed LOADER into LOADER_TYPE
 
-     usr/share/rear/prep/default/50_guess_bootloader.sh | 3 ++-
-      1 file changed, 2 insertions(+), 1 deletion(-)
+ usr/share/rear/prep/default/50_guess_bootloader.sh | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)

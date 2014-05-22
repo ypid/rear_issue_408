@@ -1,0 +1,10 @@
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/dm-0       203G  194G  6.4G  97% /
+udev             10M     0   10M   0% /dev
+tmpfs           794M  1.5M  793M   1% /run
+tmpfs           5.0M     0  5.0M   0% /run/lock
+tmpfs           1.6G  1.4M  1.6G   1% /run/shm
+/dev/sda1       453M  100M  331M  24% /boot
+tmpfs           3.9G  108K  3.9G   1% /tmp
+tmpfs           3.9G  109M  3.8G   3% /var/cache/apt/archives
+none            4.0K     0  4.0K   0% /sys/fs/cgroup
