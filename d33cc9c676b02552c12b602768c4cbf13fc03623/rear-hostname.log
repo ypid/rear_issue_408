@@ -1,0 +1,2581 @@
+2014-06-25 21:10:28.822361272 Relax-and-Recover 1.16.1 / Git
+2014-06-25 21:10:28.823653385 Command line options: /usr/sbin//rear -vdD savelayout
+2014-06-25 21:10:28.824833212 Using log file: /var/log/rear/rear-hostname.log
+2014-06-25 21:10:28.827073514 Combining configuration files
+2014-06-25 21:10:28.828283408 Skipping /etc/rear/os.conf (file not found or empty)
+2014-06-25 21:10:28.829481433 Skipping /etc/rear/savelayout.conf (file not found or empty)
+2014-06-25 21:10:28.908203861 Including conf/Linux-i386.conf
++ . /usr/share/rear/conf/Linux-i386.conf
+++ REQUIRED_PROGS=("${REQUIRED_PROGS[@]}" parted sfdisk)
+++ PROGS=("${PROGS[@]}" grub partprobe lilo fdisk cfdisk)
++ test 1
++ set +x
+2014-06-25 21:10:28.909582839 Including conf/GNU/Linux.conf
++ . /usr/share/rear/conf/GNU/Linux.conf
+++ PROGS=(${PROGS[@]} rpc.statd rpcbind bash mknod blkid vol_id udev_volume_id portmap readlink rpcinfo grep cat tac tr reboot halt shutdown killall5 killall chroot tee awk ip ifconfig nslookup route ifenslave ifrename nameif klogd syslog-ng syslogd rsyslogd echo cp date wc cut rm rmdir test init telinit ethtool expand sed mount umount insmod modprobe lsmod true false mingetty rmmod hostname uname sleep logger ps ln dirname basename mkdir tty ping netstat free traceroute less vi pico nano rmmod df ls dmesg du tar gzip netcat top iptraf joe pico getent id ldd strace rsync tail head find md5sum mkfs mkfs.ext2 mkfs.ext3 mkfs.ext4 mkfs.ext4dev mkfs.jfs mkfs.xfs mkfs.reiserfs mkfs.vfat mkfs.btrfs mkreiserfs fsck fsck.ext2 fsck.ext3 fsck.ext4 fsck.ext4dev fsck.xfs fsck.reiserfs reiserfsck fsck.btrfs btrfsck tune2fs tune4fs xfs_admin xfs_db btrfs jfs_tune reiserfstune expr egrep grep fgrep chmod chown stat mkswap swapon swapoff mknod touch scsi_id lsscsi logd initctl lspci usleep mktemp /bin/true strace which mkfifo seq openvt poweroff chacl getfacl setfacl attr getfattr setfattr mpath_wait strings xargs sg_inq)
+++ LIBS=(${LIBS[@]} /lib*/libnss_dns* /lib*/libnss_files* /lib/*/libnss_dns* /lib/*/libnss_files* /lib*/libgcc_s* /lib*/libresolv* /usr/lib*/rsyslog/*so /lib*/rsyslog/*so /usr/lib*/syslog-ng/*)
+++ MODULES=(${MODULES[@]} vfat nls_iso8859_1 nls_utf8 nls_cp437 af_packet unix nfs nfsv4 nfsv3 lockd sunrpc cifs usbcore usb_storage usbhid sr_mod ide_cd cdrom uhci_hcd ehci_hcd ohci_hcd zlib zlib-inflate zlib-deflate libcrc32c crc32c crc32c-intel)
+++ COPY_AS_IS=(${COPY_AS_IS[@]} /dev /etc/inputr[c] /etc/protocols /etc/services /etc/rpc /etc/termcap /etc/terminfo /lib*/terminfo /usr/share/terminfo /etc/netconfig /etc/mke2fs.conf /etc/*-release /lib*/firmware /etc/localtime /etc/magic /usr/share/misc/magic /etc/dracut.conf /etc/dracut.conf.d /usr/lib/dracut)
+++ COPY_AS_IS_EXCLUDE=(${COPY_AS_IS_EXCLUDE[@]} dev/shm/\*)
+++ KERNEL_CMDLINE=' selinux=0'
+++ CLONE_USERS=("${CLONE_USERS[@]}" daemon rpc usbmuxd usbmux vcsa nobody)
+++ CLONE_GROUPS=("${CLONE_GROUPS[@]}" tty usbmuxd usbmux fuse kvm)
++ test 1
++ set +x
+2014-06-25 21:10:28.913686000 Skipping /usr/share/rear/conf/Debian.conf (file not found or empty)
+2014-06-25 21:10:28.914801603 Skipping /usr/share/rear/conf/Debian/i386.conf (file not found or empty)
+2014-06-25 21:10:28.915903251 Skipping /usr/share/rear/conf/Debian/testing.conf (file not found or empty)
+2014-06-25 21:10:28.916987548 Skipping /usr/share/rear/conf/Debian/testing/i386.conf (file not found or empty)
+2014-06-25 21:10:28.918112056 Including /etc/rear/site.conf
++ . /etc/rear/site.conf
+++ PROGS_OWN=(perl mosh ack zsh getconf whoami cmatrix)
+++ COPY_AS_IS_OWN=('/usr/lib/x86_64-linux-gnu/zsh' '/usr/share/zsh' '/usr/share/perl' '/usr/share/perl5' '/usr/lib/perl' '/usr/lib/perl5')
+++ PROGS=("${PROGS[@]}" "${PROGS_OWN[@]}" mesg env dircolors eject ssh scp git badblocks f3read f3write smartctl hdparm wipe wget curl sshfs tmux iotop)
+++ PROGS_NOT_USED=(setxkbmap htop dig)
+++ COPY_AS_IS=("${COPY_AS_IS[@]}" "${COPY_AS_IS_OWN[@]}" '/lib/x86_64-linux-gnu/libgcc_s.so.1' '/usr/share/vim' '/etc/timezone' '/root/dotfiles/.tmux.conf' '/root/.tmux.conf')
+++ COPY_AS_IS_EXCLUDE=("${COPY_AS_IS_EXCLUDE[@]}" '/root/.ssh/*' '/root/.synaptic' '/root/.vimswap' '/root/.vimundo' '/root/.vimview' '/root/.vim' '/root/.vimrc' '/root/dotfiles/.vim' '/root/.bashrc' '/root/.bash_history')
+++ AUTOEXCLUDE_PATH=("${AUTOEXCLUDE_PATH[@]}" /mnt)
+++ BACKUP_PROG_EXCLUDE=("${BACKUP_PROG_EXCLUDE[@]}" '/mnt/*' '/lib/firmware')
++ test 1
++ set +x
+2014-06-25 21:10:28.919928443 Including /etc/rear/local.conf
++ . /etc/rear/local.conf
+++ OUTPUT=ISO
+++ BACKUP_PROG_EXCLUDE=("${BACKUP_PROG_EXCLUDE[@]}" '/home/*' '.snapshots/*')
+++ BACKUP=RSYNC
+++ BACKUP_URL=rearbackup@matrix.local:/home/rearbackup/systems
+++ BACKUP_RSYNC_OPTIONS=("${BACKUP_RSYNC_OPTIONS[@]}" -v)
+++ NETFS_KEEP_OLD_BACKUP_COPY=y
++ test 1
++ set +x
+2014-06-25 21:10:28.921196500 Skipping /etc/rear/rescue.conf (file not found or empty)
+2014-06-25 21:10:28.925376719 Using build area '/tmp/rear.R6CEf0kWQTDMA0N'
+mkdir: created directory '/tmp/rear.R6CEf0kWQTDMA0N/rootfs'
+mkdir: created directory '/tmp/rear.R6CEf0kWQTDMA0N/tmp'
+2014-06-25 21:10:28.927826810 Running savelayout workflow
+2014-06-25 21:10:28.928933564 Running 'layout/save' stage
+2014-06-25 21:10:28.932553038 Including layout/save/GNU/Linux/10_create_layout_file.sh
++ . /usr/share/rear/layout/save/GNU/Linux/10_create_layout_file.sh
+++ LogPrint 'Creating disk layout'
+++ Log 'Creating disk layout'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:28.933602058 Creating disk layout'
+2014-06-25 21:10:28.933602058 Creating disk layout
+++ Print 'Creating disk layout'
+++ test 1
+++ echo -e 'Creating disk layout'
+++ Log 'Preparing layout directory.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:28.934691621 Preparing layout directory.'
+2014-06-25 21:10:28.934691621 Preparing layout directory.
+++ mkdir -p -v /var/lib/rear/layout
+++ mkdir -p -v /var/lib/rear/recovery
+++ mkdir -p -v /var/lib/rear/layout/config
+++ DISKLAYOUT_FILE=/var/lib/rear/layout/disklayout.conf
+++ '[' -e /var/lib/rear/layout/disklayout.conf ']'
+++ Log 'Removing old layout file.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:28.937649672 Removing old layout file.'
+2014-06-25 21:10:28.937649672 Removing old layout file.
+++ :
+++ LAYOUT_FILE=/var/lib/rear/layout/disklayout.conf
+++ LAYOUT_DEPS=/var/lib/rear/layout/diskdeps.conf
+++ LAYOUT_TODO=/var/lib/rear/layout/disktodo.conf
+++ :
+++ :
++ test 1
++ set +x
+2014-06-25 21:10:28.939105038 Including layout/save/GNU/Linux/15_save_diskbyid_mappings.sh
++ . /usr/share/rear/layout/save/GNU/Linux/15_save_diskbyid_mappings.sh
+++ UdevQueryName=
+++ type -p udevinfo
+++ type -p udevadm
+++ UdevQueryName='udevadm info --query=name --name'
+++ [[ -z udevadm info --query=name --name ]]
+++ ls /dev/disk/by-id
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/ata-DiskIdentifier
+++ ID_NEW=sda
+++ echo ata-DiskIdentifier sda
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/ata-DiskIdentifier-part1
+++ ID_NEW=sda1
+++ echo ata-DiskIdentifier-part1 sda1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/ata-DiskIdentifier-part2
+++ ID_NEW=sda2
+++ echo ata-DiskIdentifier-part2 sda2
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/ata-DiskIdentifier-part3
+++ ID_NEW=sda3
+++ echo ata-DiskIdentifier-part3 sda3
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/ata-DiskIdentifier2
+++ ID_NEW=sdb
+++ echo ata-DiskIdentifier2 sdb
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/ata-DiskIdentifier2-part1
+++ ID_NEW=sdb1
+y+ echo ata-DiskIdentifier2-part1 sdb1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/dm-name-DMNAME
+++ ID_NEW=dm-2
+++ echo dm-name-DMNAME dm-2
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/dm-name-sda2_crypt
+++ ID_NEW=dm-1
+++ echo dm-name-sda2_crypt dm-1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/dm-name-sda3_crypt
+++ ID_NEW=dm-0
+++ echo dm-name-sda3_crypt dm-0
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/dm-uuid-CRYPT-LUKS1-2be2e1ecc91f464fa29628ff54c49a77-sda3_crypt
+++ ID_NEW=dm-0
+++ echo dm-uuid-CRYPT-LUKS1-2be2e1ecc91f464fa29628ff54c49a77-sda3_crypt dm-0
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/dm-uuid-CRYPT-LUKS1-de06ca5427754b8d9ce671636b4daa6d-DMNAME_unformatted
+++ ID_NEW=dm-2
+++ echo dm-uuid-CRYPT-LUKS1-de06ca5427754b8d9ce671636b4daa6d-DMNAME_unformatted dm-2
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/dm-uuid-CRYPT-PLAIN-sda2_crypt_unformatted
+++ ID_NEW=dm-1
+++ echo dm-uuid-CRYPT-PLAIN-sda2_crypt_unformatted dm-1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/scsi-SATA_DiskIdentifier
+++ ID_NEW=sda
+++ echo scsi-SATA_DiskIdentifier sda
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/scsi-SATA_DiskIdentifier-part1
+++ ID_NEW=sda1
+++ echo scsi-SATA_DiskIdentifier-part1 sda1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/scsi-SATA_DiskIdentifier-part2
+++ ID_NEW=sda2
+++ echo scsi-SATA_DiskIdentifier-part2 sda2
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/scsi-SATA_DiskIdentifier-part3
+++ ID_NEW=sda3
+++ echo scsi-SATA_DiskIdentifier-part3 sda3
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/scsi-SATA_WDC_WD10JPVX-80J_WD-WXH1E93DDDM7
+++ ID_NEW=sdb
+++ echo scsi-SATA_WDC_WD10JPVX-80J_WD-WXH1E93DDDM7 sdb
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/scsi-SATA_WDC_WD10JPVX-80J_WD-WXH1E93DDDM7-part1
+++ ID_NEW=sdb1
+++ echo scsi-SATA_WDC_WD10JPVX-80J_WD-WXH1E93DDDM7-part1 sdb1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/wwn-0x50014ee6aed5142c
+++ ID_NEW=sdb
+++ echo wwn-0x50014ee6aed5142c sdb
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/wwn-0x50014ee6aed5142c-part1
+++ ID_NEW=sdb1
+++ echo wwn-0x50014ee6aed5142c-part1 sdb1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/wwn-0x50025385a01caa51
+++ ID_NEW=sda
+++ echo wwn-0x50025385a01caa51 sda
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/wwn-0x50025385a01caa51-part1
+++ ID_NEW=sda1
+++ echo wwn-0x50025385a01caa51-part1 sda1
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/wwn-0x50025385a01caa51-part2
+++ ID_NEW=sda2
+++ echo wwn-0x50025385a01caa51-part2 sda2
+++ read ID
++++ udevadm info --query=name --name /dev/disk/by-id/wwn-0x50025385a01caa51-part3
+++ ID_NEW=sda3
+++ echo wwn-0x50025385a01caa51-part3 sda3
+++ read ID
+++ [[ -f /var/lib/rear/recovery/diskbyid_mappings ]]
+++ Log 'Saved diskbyid_mappings'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:28.986483006 Saved diskbyid_mappings'
+2014-06-25 21:10:28.986483006 Saved diskbyid_mappings
++ test 1
++ set +x
+2014-06-25 21:10:28.987817539 Including layout/save/GNU/Linux/20_partition_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/20_partition_layout.sh
+++ FEATURE_PARTED_MACHINEREADABLE=
+++ FEATURE_PARTED_OLDNAMING=
++++ get_version parted -v
++++ TERM=dumb
++++ parted -v
++++ sed -rn 's/^[^0-9\.]*([0-9]+\.[-0-9a-z\.]+).*$/\1/p'
++++ head -1
+++ parted_version=2.3
+++ [[ -n 2.3 ]]
+++ BugIfError 'Function get_version could not detect parted version.'
+++ ((  0 != 0  ))
+++ version_newer 2.3 1.8.2
+++ v1list=(${1//[-.]/ })
+++ local v1list
+++ v2list=(${2//[-.]/ })
+++ local v2list
+++ local max=2
+++ ((  2 < 3  ))
+++ max=3
+++ local pos
++++ seq 0 2
+++ for pos in '$(seq 0 $(( max -1 )))'
+++ ((  10#02 < 10#01  ))
+++ ((  10#02 > 10#01  ))
+++ return 0
+++ FEATURE_PARTED_MACHINEREADABLE=y
+++ version_newer 2.3 1.6.23
+++ v1list=(${1//[-.]/ })
+++ local v1list
+++ v2list=(${2//[-.]/ })
+++ local v2list
+++ local max=2
+++ ((  2 < 3  ))
+++ max=3
+++ local pos
++++ seq 0 2
+++ for pos in '$(seq 0 $(( max -1 )))'
+++ ((  10#02 < 10#01  ))
+++ ((  10#02 > 10#01  ))
+++ return 0
+++ Log 'Saving disk partitions.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:28.995594271 Saving disk partitions.'
+2014-06-25 21:10:28.995594271 Saving disk partitions.
+++ for disk in '/sys/block/*'
+++ blockd=dm-0
+++ [[ dm-0 = hd* ]]
+++ [[ dm-0 = sd* ]]
+++ [[ dm-0 = cciss* ]]
+++ [[ dm-0 = vd* ]]
+++ [[ dm-0 = xvd* ]]
+++ for disk in '/sys/block/*'
+++ blockd=dm-1
+++ [[ dm-1 = hd* ]]
+++ [[ dm-1 = sd* ]]
+++ [[ dm-1 = cciss* ]]
+++ [[ dm-1 = vd* ]]
+++ [[ dm-1 = xvd* ]]
+++ for disk in '/sys/block/*'
+++ blockd=dm-2
+++ [[ dm-2 = hd* ]]
+++ [[ dm-2 = sd* ]]
+++ [[ dm-2 = cciss* ]]
+++ [[ dm-2 = vd* ]]
+++ [[ dm-2 = xvd* ]]
+++ for disk in '/sys/block/*'
+++ blockd=sda
+++ [[ sda = hd* ]]
+++ [[ sda = sd* ]]
++++ get_device_name /sys/block/sda
++++ local name=/sys/block/sda
++++ name=sda
++++ [[ -n sda ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda ]]
++++ [[ -r /sys/block/sda/dm/name ]]
++++ dev_number=8:0
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor DMNAME
++++ mapper_number=254:2
++++ '[' 8:0 = 254:2 ']'
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor control
++++ mapper_number=
++++ '[' 8:0 = '' ']'
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor sda2_crypt
++++ mapper_number=254:1
++++ '[' 8:0 = 254:1 ']'
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor sda3_crypt
++++ mapper_number=254:0
++++ '[' 8:0 = 254:0 ']'
++++ name=sda
++++ echo /dev/sda
++++ return 1
+++ devname=/dev/sda
++++ get_disk_size sda
++++ local disk_name=sda
+++++ get_block_size sda
+++++ '[' -r /sys/block/sda/queue/logical_block_size ']'
+++++ echo 512
++++ local block_size=512
++++ '[' -r /sys/block/sda/size ']'
++++ BugIfError 'Could not determine size of disk sda, please file a bug.'
++++ ((  0 != 0  ))
++++ local nr_blocks=500118192
++++ local disk_size=256060514304
++++ echo 256060514304
+++ devsize=256060514304
++++ parted -s /dev/sda print
++++ grep -E 'Partition Table|Disk label'
++++ cut -d : -f 2
++++ tr -d ' '
+++ disktype=msdos
+++ echo 'disk /dev/sda 256060514304 msdos'
+++ extract_partitions /dev/sda
+++ declare device=/dev/sda
++++ get_sysfs_name /dev/sda
++++ local name=sda
++++ name=sda
++++ [[ -e /sys/block/sda ]]
++++ echo sda
++++ return 0
+++ declare sysfs_name=sda
++++ get_block_size sda
++++ '[' -r /sys/block/sda/queue/logical_block_size ']'
++++ echo 512
+++ declare block_size=512
+++ sysfs_paths=(/sys/block/$sysfs_name/$sysfs_name*)
+++ declare -a sysfs_paths
+++ declare path sysfs_path
+++ [[ 3 -eq 0 ]]
+++ :
+++ declare partition_name partition_prefix start_block
+++ declare partition_nr size start
+++ for path in '"${sysfs_paths[@]}"'
++++ get_device_name sda1
++++ local name=sda1
++++ name=sda1
++++ [[ -n sda1 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda1 ]]
++++ name=sda1
++++ echo /dev/sda1
++++ return 1
+++ partition_name=/dev/sda1
+++ partition_name=sda1
+++ partition_name=sda1
++++ get_partition_number sda1
++++ local partition=sda1
+++++ echo sda1
+++++ grep -o -E '[0-9]+$'
++++ local number=1
++++ '[' 1 -gt 0 ']'
++++ StopIfError 'Partition number '\''1'\'' of partition sda1 is not a valid number.'
++++ ((  0 != 0  ))
++++ ((  1 <= 128  ))
++++ StopIfError 'Partition sda1 is numbered '\''1'\''. More than 128 partitions is not supported.'
++++ ((  0 != 0  ))
++++ echo 1
+++ partition_nr=1
+++ partition_prefix=sda
++++ get_disk_size sda/sda1
++++ local disk_name=sda/sda1
+++++ get_block_size sda
+++++ '[' -r /sys/block/sda/queue/logical_block_size ']'
+++++ echo 512
++++ local block_size=512
++++ '[' -r /sys/block/sda/sda1/size ']'
++++ BugIfError 'Could not determine size of disk sda/sda1, please file a bug.'
++++ ((  0 != 0  ))
++++ local nr_blocks=974848
++++ local disk_size=499122176
++++ echo 499122176
+++ size=499122176
+++ [[ -r /sys/block/sda/sda1/start ]]
+++ start_block=2048
+++ start=1048576
+++ echo '1 499122176 1048576'
+++ for path in '"${sysfs_paths[@]}"'
++++ get_device_name sda2
++++ local name=sda2
++++ name=sda2
++++ [[ -n sda2 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda2 ]]
++++ name=sda2
++++ echo /dev/sda2
++++ return 1
+++ partition_name=/dev/sda2
+++ partition_name=sda2
+++ partition_name=sda2
++++ get_partition_number sda2
++++ local partition=sda2
+++++ echo sda2
+++++ grep -o -E '[0-9]+$'
++++ local number=2
++++ '[' 2 -gt 0 ']'
++++ StopIfError 'Partition number '\''2'\'' of partition sda2 is not a valid number.'
++++ ((  0 != 0  ))
++++ ((  2 <= 128  ))
++++ StopIfError 'Partition sda2 is numbered '\''2'\''. More than 128 partitions is not supported.'
++++ ((  0 != 0  ))
++++ echo 2
+++ partition_nr=2
+++ partition_prefix=sda
++++ get_disk_size sda/sda2
++++ local disk_name=sda/sda2
+++++ get_block_size sda
+++++ '[' -r /sys/block/sda/queue/logical_block_size ']'
+++++ echo 512
++++ local block_size=512
++++ '[' -r /sys/block/sda/sda2/size ']'
++++ BugIfError 'Could not determine size of disk sda/sda2, please file a bug.'
++++ ((  0 != 0  ))
++++ local nr_blocks=3905536
++++ local disk_size=1999634432
++++ echo 1999634432
+++ size=1999634432
+++ [[ -r /sys/block/sda/sda2/start ]]
+++ start_block=976896
+++ start=500170752
+++ echo '2 1999634432 500170752'
+++ for path in '"${sysfs_paths[@]}"'
++++ get_device_name sda3
++++ local name=sda3
++++ name=sda3
++++ [[ -n sda3 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda3 ]]
++++ name=sda3
++++ echo /dev/sda3
++++ return 1
+++ partition_name=/dev/sda3
+++ partition_name=sda3
+++ partition_name=sda3
++++ get_partition_number sda3
++++ local partition=sda3
+++++ echo sda3
+++++ grep -o -E '[0-9]+$'
++++ local number=3
++++ '[' 3 -gt 0 ']'
++++ StopIfError 'Partition number '\''3'\'' of partition sda3 is not a valid number.'
++++ ((  0 != 0  ))
++++ ((  3 <= 128  ))
++++ StopIfError 'Partition sda3 is numbered '\''3'\''. More than 128 partitions is not supported.'
++++ ((  0 != 0  ))
++++ echo 3
+++ partition_nr=3
+++ partition_prefix=sda
++++ get_disk_size sda/sda3
++++ local disk_name=sda/sda3
+++++ get_block_size sda
+++++ '[' -r /sys/block/sda/queue/logical_block_size ']'
+++++ echo 512
++++ local block_size=512
++++ '[' -r /sys/block/sda/sda3/size ']'
++++ BugIfError 'Could not determine size of disk sda/sda3, please file a bug.'
++++ ((  0 != 0  ))
++++ local nr_blocks=229558272
++++ local disk_size=117533835264
++++ echo 117533835264
+++ size=117533835264
+++ [[ -r /sys/block/sda/sda3/start ]]
+++ start_block=4882432
+++ start=2499805184
+++ echo '3 117533835264 2499805184'
+++ sort -n /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions_unsorted
+++ [[ ! -s /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions ]]
+++ declare disk_label
+++ [[ -n y ]]
+++ parted -m -s /dev/sda print
++++ grep '^/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/parted
++++ cut -d : -f 6
+++ disk_label=msdos
+++ cp /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions-data
+++ declare type
+++ [[ msdos = \m\s\d\o\s ]]
+++ declare -i has_logical
+++ read partition_nr size start junk
+++ ((  1 > 4  ))
+++ declare type=primary
+++ sed -i '/^1 /s/$/ primary/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
+++ ((  2 > 4  ))
+++ declare type=primary
+++ sed -i '/^2 /s/$/ primary/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
+++ ((  3 > 4  ))
+++ declare type=primary
+++ sed -i '/^3 /s/$/ primary/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
+++ [[ msdos = \g\p\t ]]
+++ declare flags flaglist
+++ [[ -n y ]]
+++ read partition_nr size start junk
++++ grep '^1:' /tmp/rear.R6CEf0kWQTDMA0N/tmp/parted
++++ cut -d : -f 7
++++ tr -d ,
++++ tr -d ';'
+++ flaglist=boot
+++ flags=
+++ for flag in '$flaglist'
+++ [[ boot = boot ]]
+++ flags=boot,
+++ [[ -z boot, ]]
+++ sed -i '/^1 /s/$/ boot/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
++++ grep '^2:' /tmp/rear.R6CEf0kWQTDMA0N/tmp/parted
++++ cut -d : -f 7
++++ tr -d ,
++++ tr -d ';'
+++ flaglist=
+++ flags=
+++ [[ -z '' ]]
+++ flags=none
+++ sed -i '/^2 /s/$/ none/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
++++ grep '^3:' /tmp/rear.R6CEf0kWQTDMA0N/tmp/parted
++++ cut -d : -f 7
++++ tr -d ,
++++ tr -d ';'
+++ flaglist=
+++ flags=
+++ [[ -z '' ]]
+++ flags=none
+++ sed -i '/^3 /s/$/ none/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
+++ [[ msdos = \m\s\d\o\s ]]
+++ [[ -n '' ]]
+++ read partition_nr size start type flags junk
+++ partition_name=/dev/sda1
++++ get_device_name /dev/sda1
++++ local name=sda1
++++ name=sda1
++++ [[ -n sda1 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda1 ]]
++++ name=sda1
++++ echo /dev/sda1
++++ return 1
+++ echo 'part /dev/sda 499122176 1048576 primary boot /dev/sda1'
+++ read partition_nr size start type flags junk
+++ partition_name=/dev/sda2
++++ get_device_name /dev/sda2
++++ local name=sda2
++++ name=sda2
++++ [[ -n sda2 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda2 ]]
++++ name=sda2
++++ echo /dev/sda2
++++ return 1
+++ echo 'part /dev/sda 1999634432 500170752 primary none /dev/sda2'
+++ read partition_nr size start type flags junk
+++ partition_name=/dev/sda3
++++ get_device_name /dev/sda3
++++ local name=sda3
++++ name=sda3
++++ [[ -n sda3 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda3 ]]
++++ name=sda3
++++ echo /dev/sda3
++++ return 1
+++ echo 'part /dev/sda 117533835264 2499805184 primary none /dev/sda3'
+++ read partition_nr size start type flags junk
+++ for disk in '/sys/block/*'
+++ blockd=sdb
+++ [[ sdb = hd* ]]
+++ [[ sdb = sd* ]]
++++ get_device_name /sys/block/sdb
++++ local name=/sys/block/sdb
++++ name=sdb
++++ [[ -n sdb ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sdb ]]
++++ [[ -r /sys/block/sdb/dm/name ]]
++++ dev_number=8:16
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor DMNAME
++++ mapper_number=254:2
++++ '[' 8:16 = 254:2 ']'
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor control
++++ mapper_number=
++++ '[' 8:16 = '' ']'
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor sda2_crypt
++++ mapper_number=254:1
++++ '[' 8:16 = 254:1 ']'
++++ for device in '/dev/mapper/*'
+++++ dmsetup info -c --noheadings -o major,minor sda3_crypt
++++ mapper_number=254:0
++++ '[' 8:16 = 254:0 ']'
++++ name=sdb
++++ echo /dev/sdb
++++ return 1
+++ devname=/dev/sdb
++++ get_disk_size sdb
++++ local disk_name=sdb
+++++ get_block_size sdb
+++++ '[' -r /sys/block/sdb/queue/logical_block_size ']'
+++++ echo 512
++++ local block_size=512
++++ '[' -r /sys/block/sdb/size ']'
++++ BugIfError 'Could not determine size of disk sdb, please file a bug.'
++++ ((  0 != 0  ))
++++ local nr_blocks=1953525168
++++ local disk_size=1000204886016
++++ echo 1000204886016
+++ devsize=1000204886016
++++ parted -s /dev/sdb print
++++ grep -E 'Partition Table|Disk label'
++++ cut -d : -f 2
++++ tr -d ' '
+++ disktype=gpt
+++ echo 'disk /dev/sdb 1000204886016 gpt'
+++ extract_partitions /dev/sdb
+++ declare device=/dev/sdb
++++ get_sysfs_name /dev/sdb
++++ local name=sdb
++++ name=sdb
++++ [[ -e /sys/block/sdb ]]
++++ echo sdb
++++ return 0
+++ declare sysfs_name=sdb
++++ get_block_size sdb
++++ '[' -r /sys/block/sdb/queue/logical_block_size ']'
++++ echo 512
+++ declare block_size=512
+++ sysfs_paths=(/sys/block/$sysfs_name/$sysfs_name*)
+++ declare -a sysfs_paths
+++ declare path sysfs_path
+++ [[ 1 -eq 0 ]]
+++ :
+++ declare partition_name partition_prefix start_block
+++ declare partition_nr size start
+++ for path in '"${sysfs_paths[@]}"'
++++ get_device_name sdb1
++++ local name=sdb1
++++ name=sdb1
++++ [[ -n sdb1 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sdb1 ]]
++++ name=sdb1
++++ echo /dev/sdb1
++++ return 1
+++ partition_name=/dev/sdb1
+++ partition_name=sdb1
+++ partition_name=sdb1
++++ get_partition_number sdb1
++++ local partition=sdb1
+++++ grep -o -E '[0-9]+$'
+++++ echo sdb1
++++ local number=1
++++ '[' 1 -gt 0 ']'
++++ StopIfError 'Partition number '\''1'\'' of partition sdb1 is not a valid number.'
++++ ((  0 != 0  ))
++++ ((  1 <= 128  ))
++++ StopIfError 'Partition sdb1 is numbered '\''1'\''. More than 128 partitions is not supported.'
++++ ((  0 != 0  ))
++++ echo 1
+++ partition_nr=1
+++ partition_prefix=sdb
++++ get_disk_size sdb/sdb1
++++ local disk_name=sdb/sdb1
+++++ get_block_size sdb
+++++ '[' -r /sys/block/sdb/queue/logical_block_size ']'
+++++ echo 512
++++ local block_size=512
++++ '[' -r /sys/block/sdb/sdb1/size ']'
++++ BugIfError 'Could not determine size of disk sdb/sdb1, please file a bug.'
++++ ((  0 != 0  ))
++++ local nr_blocks=1953521664
++++ local disk_size=1000203091968
++++ echo 1000203091968
+++ size=1000203091968
+++ [[ -r /sys/block/sdb/sdb1/start ]]
+++ start_block=2048
+++ start=1048576
+++ echo '1 1000203091968 1048576'
+++ sort -n /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions_unsorted
+++ [[ ! -s /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions ]]
+++ declare disk_label
+++ [[ -n y ]]
+++ parted -m -s /dev/sdb print
++++ grep '^/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/parted
++++ cut -d : -f 6
+++ disk_label=gpt
+++ cp /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions-data
+++ declare type
+++ [[ gpt = \m\s\d\o\s ]]
+++ [[ gpt = \g\p\t ]]
+++ [[ -n y ]]
+++ read partition_nr size start junk
++++ grep '^1:' /tmp/rear.R6CEf0kWQTDMA0N/tmp/parted
++++ cut -d : -f 6
+++ type=primary
+++ [[ -z primary ]]
++++ echo primary
++++ sed -e 's/ /0x20/g'
+++ type=primary
+++ sed -i '/^1 /s/$/ primary/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
+++ declare flags flaglist
+++ [[ -n y ]]
+++ read partition_nr size start junk
++++ grep '^1:' /tmp/rear.R6CEf0kWQTDMA0N/tmp/parted
++++ cut -d : -f 7
++++ tr -d ,
++++ tr -d ';'
+++ flaglist=
+++ flags=
+++ [[ -z '' ]]
+++ flags=none
+++ sed -i '/^1 /s/$/ none/' /tmp/rear.R6CEf0kWQTDMA0N/tmp/partitions
+++ read partition_nr size start junk
+++ [[ gpt = \m\s\d\o\s ]]
+++ read partition_nr size start type flags junk
+++ partition_name=/dev/sdb1
++++ get_device_name /dev/sdb1
++++ local name=sdb1
++++ name=sdb1
++++ [[ -n sdb1 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sdb1 ]]
++++ name=sdb1
++++ echo /dev/sdb1
++++ return 1
+++ echo 'part /dev/sdb 1000203091968 1048576 primary none /dev/sdb1'
+++ read partition_nr size start type flags junk
++ test 1
++ set +x
+2014-06-25 21:10:29.088645027 Including layout/save/GNU/Linux/21_raid_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/21_raid_layout.sh
+++ '[' -e /proc/mdstat ']'
++ test 1
++ set +x
+2014-06-25 21:10:29.090304390 Including layout/save/GNU/Linux/22_lvm_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/22_lvm_layout.sh
+++ has_binary lvm
+++ for bin in '$@'
+++ type lvm
+++ return 0
+++ Log 'Saving LVM layout.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.091482316 Saving LVM layout.'
+2014-06-25 21:10:29.091482316 Saving LVM layout.
+++ lvm pvdisplay -c
+++ read line
+++ lvm vgdisplay -c
+++ read line
+  No volume groups found
+++ lvm lvdisplay -c
+++ read line
+  No volume groups found
++ test 1
++ set +x
+2014-06-25 21:10:29.231332065 Including layout/save/GNU/Linux/23_filesystem_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/23_filesystem_layout.sh
+++ Log 'Saving Filesystem layout.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.233309477 Saving Filesystem layout.'
+2014-06-25 21:10:29.233309477 Saving Filesystem layout.
+++ read device on mountpoint type fstype options junk
++++ mount
+++ '[' sysfs = sysfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' proc = proc ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' udev = udev ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' devpts = devpts ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' tmpfs = tmpfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2 = /dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2 ']'
+++ '[' '!' -b /dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2 ']'
+++ '[' btrfs = iso9660 ']'
+++ [[ /dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2 == /dev/disk/by-uuid* ]]
++++ readlink -f /dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2
+++ ndevice=/dev/dm-0
+++ Log 'Mapping /dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2 to /dev/dm-0'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.239912115 Mapping /dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2 to /dev/dm-0'
+2014-06-25 21:10:29.239912115 Mapping /dev/disk/by-uuid/72008e29-a62f-4333-ade0-5e3c7bb0efc2 to /dev/dm-0
+++ device=/dev/dm-0
+++ echo -n 'fs /dev/dm-0 / btrfs '
+++ case "$fstype" in
++++ btrfs filesystem show /dev/dm-0
++++ grep -i uuid:
++++ cut -d: -f 3
++++ tr -d ' '
+++ uuid=72008e29-a62f-4333-ade0-5e3c7bb0efc2
++++ btrfs filesystem show /dev/dm-0
++++ grep -i label
++++ sed -e s/uuid// -e 's/^ //'
+++ label='none  '
++++ echo none
+++ [[ none = \n\o\n\e ]]
+++ label=
+++ echo -n 'uuid=72008e29-a62f-4333-ade0-5e3c7bb0efc2 label='
+++ options='rw,noatime,nodiratime,ssd,space_cache)'
+++ options=rw,noatime,nodiratime,ssd,space_cache
+++ case "$fstype" in
++++ btrfs subvolume show /
++++ grep Name:
++++ awk '{print $2}'
+++ subvol=
+++ [[ ! -z '' ]]
+++ echo -n ' options=rw,noatime,nodiratime,ssd,space_cache'
+++ echo
+++ read device on mountpoint type fstype options junk
+++ '[' tmpfs = tmpfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' pstore = pstore ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' tmpfs = tmpfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' fusectl = fusectl ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' dev/sda1 = /dev/sda1 ']'
+++ '[' '!' -b /dev/sda1 ']'
+++ '[' ext4 = iso9660 ']'
+++ [[ /dev/sda1 == /dev/disk/by-uuid* ]]
+++ echo -n 'fs /dev/sda1 /boot ext4 '
+++ case "$fstype" in
+++ tunefs=tune2fs
+++ '[' ext4 = ext4 ']'
+++ tune2fs -l /dev/sda1
++++ tune2fs -l /dev/sda1
++++ grep UUID
++++ cut -d : -f 2
++++ tr -d ' '
+++ uuid=308700cb-7c8f-4cec-9d21-dbc77ab3858d
++++ e2label /dev/sda1
+++ label=
++++ tune2fs -l /dev/sda1
++++ grep 'Block size'
++++ tr -d ' '
++++ cut -d : -f 2
+++ blocksize=1024
++++ tune2fs -l /dev/sda1
++++ grep 'Maximum mount count'
++++ cut -d : -f 2
++++ tr -d ' '
+++ max_mounts=-1
++++ tune2fs -l /dev/sda1
++++ grep 'Check interval'
++++ cut -d : -f 2
++++ tr -d ' '
++++ cut -d '(' -f 1
+++ check_interval=0
++++ tune2fs -l /dev/sda1
++++ grep 'Block count'
++++ tr -d ' '
++++ cut -d : -f 2
+++ nr_blocks=487424
++++ tune2fs -l /dev/sda1
++++ grep 'Reserved block count'
++++ tr -d ' '
++++ cut -d : -f 2
+++ reserved_blocks=19496
+++ reserved_percentage=3
++++ tune2fs -l /dev/sda1
++++ grep 'Inode count'
++++ tr -d ' '
++++ cut -d : -f 2
+++ nr_inodes=122400
+++ let 'bytes_per_inode=487424*1024/122400'
++++ tune2fs -l /dev/sda1
++++ grep -i 'Default mount options'
++++ cut -d : -f 2
++++ tr ' ' ,
++++ grep -v none
++++ awk '{$1=$1};1'
+++ default_mount_options=user_xattr,acl
+++ let check_interval=0/86400
+++ echo -n 'uuid=308700cb-7c8f-4cec-9d21-dbc77ab3858d label='
+++ echo -n ' blocksize=1024 reserved_blocks=3%'
+++ echo -n ' max_mounts=-1 check_interval=0d'
+++ echo -n ' bytes_per_inode=4077'
+++ [[ -n user_xattr,acl ]]
+++ echo -n ' default_mount_options=user_xattr,acl'
+++ options='rw,nosuid,nodev,noexec,noatime,nodiratime,data=ordered)'
+++ options=rw,nosuid,nodev,noexec,noatime,nodiratime,data=ordered
+++ case "$fstype" in
+++ echo -n ' options=rw,nosuid,nodev,noexec,noatime,nodiratime,data=ordered'
+++ echo
+++ read device on mountpoint type fstype options junk
+++ '[' dev/mapper/DMNAME = /dev/mapper/DMNAME ']'
+++ '[' '!' -b /dev/mapper/DMNAME ']'
+++ '[' btrfs = iso9660 ']'
+++ [[ /dev/mapper/DMNAME == /dev/disk/by-uuid* ]]
+++ echo -n 'fs /dev/mapper/DMNAME /media/DMNAME btrfs '
+++ case "$fstype" in
++++ btrfs filesystem show /dev/mapper/DMNAME
++++ grep -i uuid:
++++ cut -d: -f 3
++++ tr -d ' '
+++ uuid=634c136c-5bab-47ea-bc88-20077302cecf
++++ btrfs filesystem show /dev/mapper/DMNAME
++++ grep -i label
++++ cut -d: -f 2
++++ sed -e s/uuid// -e 's/^ //'
+++ label='none  '
++++ echo none
+++ [[ none = \n\o\n\e ]]
+++ label=
+++ echo -n 'uuid=634c136c-5bab-47ea-bc88-20077302cecf label='
+++ options='rw,nosuid,nodev,noatime,nodiratime,space_cache)'
+++ options=rw,nosuid,nodev,noatime,nodiratime,space_cache
+++ case "$fstype" in
++++ btrfs subvolume show /media/DMNAME
++++ grep Name:
++++ awk '{print $2}'
+++ subvol=
+++ [[ ! -z '' ]]
+++ echo -n ' options=rw,nosuid,nodev,noatime,nodiratime,space_cache'
+++ echo
+++ read device on mountpoint type fstype options junk
+++ '[' tmpfs = tmpfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' tmpfs = tmpfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' rpc_pipefs = rpc_pipefs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' binfmt_misc = binfmt_misc ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' none = none ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' systemd = systemd ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' gvfsd-fuse = gvfsd-fuse ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' encfs = encfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' encfs = encfs ']'
+++ continue
+++ read device on mountpoint type fstype options junk
+++ '[' /orion.hampel-it.de/daten = //orion.hampel-it.de/daten ']'
+++ '[' '!' -b //orion.hampel-it.de/daten ']'
+++ Log '//orion.hampel-it.de/daten is not a block device, skipping.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.298148826 //orion.hampel-it.de/daten is not a block device, skipping.'
+2014-06-25 21:10:29.298148826 //orion.hampel-it.de/daten is not a block device, skipping.
+++ continue
+++ read device on mountpoint type fstype options junk
++ test 1
++ set +x
+2014-06-25 21:10:29.299699995 Including layout/save/GNU/Linux/24_swaps_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/24_swaps_layout.sh
+++ Log 'Saving Swap information.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.300909940 Saving Swap information.'
+2014-06-25 21:10:29.300909940 Saving Swap information.
+++ read filename type junk
++++ cat /proc/swaps
+++ '[' Filename = Filename ']'
+++ continue
+++ read filename type junk
+++ '[' /dev/dm-1 = Filename ']'
+++ '[' partition = file ']'
++++ ls /dev/mapper/DMNAME /dev/mapper/control /dev/mapper/sda2_crypt /dev/mapper/sda3_crypt
+++ for dlink in '$(ls /dev/mapper/*)'
++++ readlink -f /dev/mapper/DMNAME
+++ target=/dev/dm-2
+++ '[' /dev/dm-2 = /dev/dm-1 ']'
+++ for dlink in '$(ls /dev/mapper/*)'
++++ readlink -f /dev/mapper/control
+++ target=/dev/mapper/control
+++ '[' /dev/mapper/control = /dev/dm-1 ']'
+++ for dlink in '$(ls /dev/mapper/*)'
++++ readlink -f /dev/mapper/sda2_crypt
+++ target=/dev/dm-1
+++ '[' /dev/dm-1 = /dev/dm-1 ']'
+++ filename=/dev/mapper/sda2_crypt
+++ break
+++ has_binary swaplabel
+++ for bin in '$@'
+++ type swaplabel
+++ return 0
+++ read what value junk
++++ swaplabel /dev/mapper/sda2_crypt
+++ case $what in
+++ uuid=fa3ec123-e1c6-44d7-a38c-aa0623b2d436
+++ read what value junk
+++ echo 'swap /dev/mapper/sda2_crypt uuid=fa3ec123-e1c6-44d7-a38c-aa0623b2d436 label='
+++ read filename type junk
++ test 1
++ set +x
+2014-06-25 21:10:29.309479978 Including layout/save/GNU/Linux/25_drbd_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/25_drbd_layout.sh
+++ '[' -e /proc/drbd ']'
++ test 1
++ set +x
+2014-06-25 21:10:29.310885446 Including layout/save/GNU/Linux/26_crypt_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/26_crypt_layout.sh
+++ has_binary cryptsetup
+++ for bin in '$@'
+++ type cryptsetup
+++ return 0
+++ Log 'Saving Encrypted volumes.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.312102077 Saving Encrypted volumes.'
+2014-06-25 21:10:29.312102077 Saving Encrypted volumes.
+++ REQUIRED_PROGS=("${REQUIRED_PROGS[@]}" cryptsetup)
+++ read dm_name junk
++++ dmsetup ls --target crypt
+++ '[' -e /dev/mapper/sda2_crypt ']'
++++ get_sysfs_name /dev/mapper/sda2_crypt
++++ local name=mapper/sda2_crypt
++++ name=mapper/sda2_crypt
++++ [[ -e /sys/block/mapper!sda2_crypt ]]
++++ [[ -h /dev/mapper/sda2_crypt ]]
+++++ readlink -f /dev/mapper/sda2_crypt
++++ local target=/dev/dm-1
++++ [[ -e /sys/block/dm-1 ]]
++++ echo dm-1
++++ return 0
+++ dev_name=dm-1
+++ '[' -z dm-1 ']'
+++ device=
+++ for slave in '/sys/block/$dev_name/slaves/*'
+++ '[' -z '' ']'
++++ get_device_name sda2
++++ local name=sda2
++++ name=sda2
++++ [[ -n sda2 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda2 ]]
++++ name=sda2
++++ echo /dev/sda2
++++ return 1
+++ device=/dev/sda2
+++ cryptsetup isLuks /dev/sda2
+++ continue
+++ read dm_name junk
+++ '[' -e /dev/mapper/sda3_crypt ']'
++++ get_sysfs_name /dev/mapper/sda3_crypt
++++ local name=mapper/sda3_crypt
++++ name=mapper/sda3_crypt
++++ [[ -e /sys/block/mapper!sda3_crypt ]]
++++ [[ -h /dev/mapper/sda3_crypt ]]
+++++ readlink -f /dev/mapper/sda3_crypt
++++ local target=/dev/dm-0
++++ [[ -e /sys/block/dm-0 ]]
++++ echo dm-0
++++ return 0
+++ dev_name=dm-0
+++ '[' -z dm-0 ']'
+++ device=
+++ for slave in '/sys/block/$dev_name/slaves/*'
+++ '[' -z '' ']'
++++ get_device_name sda3
++++ local name=sda3
++++ name=sda3
++++ [[ -n sda3 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sda3 ]]
++++ name=sda3
++++ echo /dev/sda3
++++ return 1
+++ device=/dev/sda3
+++ cryptsetup isLuks /dev/sda3
++++ cryptsetup luksDump /dev/sda3
++++ grep 'Cipher name'
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ cipher=aes
++++ cryptsetup luksDump /dev/sda3
++++ grep 'Cipher mode'
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ mode=xts-plain64
++++ cryptsetup luksDump /dev/sda3
++++ grep 'Hash spec'
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ hash=sha1
++++ cryptsetup luksDump /dev/sda3
++++ grep UUID
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ uuid=2be2e1ec-c91f-464f-a296-28ff54c49a77
+++ echo 'crypt /dev/mapper/sda3_crypt /dev/sda3 cipher=aes mode=xts-plain64 hash=sha1 uuid=2be2e1ec-c91f-464f-a296-28ff54c49a77'
+++ read dm_name junk
+++ '[' -e /dev/mapper/DMNAME ']'
++++ get_sysfs_name /dev/mapper/DMNAME
++++ local name=mapper/DMNAME
++++ name=mapper/DMNAME
++++ [[ -e /sys/block/mapper!DMNAME ]]
++++ [[ -h /dev/mapper/DMNAME ]]
+++++ readlink -f /dev/mapper/DMNAME
++++ local target=/dev/dm-2
++++ [[ -e /sys/block/dm-2 ]]
++++ echo dm-2
++++ return 0
+++ dev_name=dm-2
+++ '[' -z dm-2 ']'
+++ device=
+++ for slave in '/sys/block/$dev_name/slaves/*'
+++ '[' -z '' ']'
++++ get_device_name sdb1
++++ local name=sdb1
++++ name=sdb1
++++ [[ -n sdb1 ]]
++++ BugIfError 'Empty string passed to get_device_name'
++++ ((  0 != 0  ))
++++ local device dev_number mapper_number
++++ [[ -d /sys/block/sdb1 ]]
++++ name=sdb1
++++ echo /dev/sdb1
++++ return 1
+++ device=/dev/sdb1
+++ cryptsetup isLuks /dev/sdb1
++++ cryptsetup luksDump /dev/sdb1
++++ grep 'Cipher name'
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ cipher=aes
++++ cryptsetup luksDump /dev/sdb1
++++ grep 'Cipher mode'
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ mode=xts-plain64
++++ cryptsetup luksDump /dev/sdb1
++++ grep 'Hash spec'
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ hash=sha1
++++ cryptsetup luksDump /dev/sdb1
++++ grep UUID
++++ sed -r 's/^.+:\s*(.+)$/\1/'
+++ uuid=de06ca54-2775-4b8d-9ce6-71636b4daa6d
+++ echo 'crypt /dev/mapper/DMNAME /dev/sdb1 cipher=aes mode=xts-plain64 hash=sha1 uuid=de06ca54-2775-4b8d-9ce6-71636b4daa6d'
+++ read dm_name junk
++ test 1
++ set +x
+2014-06-25 21:10:29.380724387 Including layout/save/GNU/Linux/27_hpraid_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/27_hpraid_layout.sh
+++ define_HPSSACLI
+++ has_binary hpacucli
+++ for bin in '$@'
+++ type hpacucli
+++ return 1
+++ has_binary hpssacli
+++ for bin in '$@'
+++ type hpssacli
+++ return 1
+++ has_binary
+++ return 1
+++ return
++ test 1
++ set +x
+2014-06-25 21:10:29.382264232 Including layout/save/GNU/Linux/28_multipath_layout.sh
++ . /usr/share/rear/layout/save/GNU/Linux/28_multipath_layout.sh
+++ read dm_name junk
++++ dmsetup ls --target multipath
+++ grep -q '^multipath' /var/lib/rear/layout/disklayout.conf
++ test 1
++ set +x
+2014-06-25 21:10:29.386856329 Including layout/save/default/30_list_dependencies.sh
++ . /usr/share/rear/layout/save/default/30_list_dependencies.sh
+++ generate_layout_dependencies
+++ :
+++ :
+++ local type dev remainder name disk disks vgrp dm_vgrp lvol dm_lvol part mp fs bd nmp temp_nm
+++ read type remainder
++++ cat /var/lib/rear/layout/disklayout.conf
+++ case $type in
++++ echo '/dev/sda 256060514304 msdos'
++++ cut -d ' ' -f 1
+++ name=/dev/sda
+++ add_component /dev/sda disk
+++ echo 'todo /dev/sda disk'
+++ read type remainder
+++ case $type in
++++ echo '/dev/sda 499122176 1048576 primary boot /dev/sda1'
++++ cut -d ' ' -f 1
+++ disk=/dev/sda
++++ echo '/dev/sda 499122176 1048576 primary boot /dev/sda1'
++++ cut -d ' ' -f 6
+++ name=/dev/sda1
+++ add_dependency /dev/sda1 /dev/sda
+++ echo '/dev/sda1 /dev/sda'
+++ add_component /dev/sda1 part
+++ echo 'todo /dev/sda1 part'
+++ read type remainder
+++ case $type in
++++ echo '/dev/sda 1999634432 500170752 primary none /dev/sda2'
++++ cut -d ' ' -f 1
+++ disk=/dev/sda
++++ echo '/dev/sda 1999634432 500170752 primary none /dev/sda2'
++++ cut -d ' ' -f 6
+++ name=/dev/sda2
+++ add_dependency /dev/sda2 /dev/sda
+++ echo '/dev/sda2 /dev/sda'
+++ add_component /dev/sda2 part
+++ echo 'todo /dev/sda2 part'
+++ read type remainder
+++ case $type in
++++ echo '/dev/sda 117533835264 2499805184 primary none /dev/sda3'
++++ cut -d ' ' -f 1
+++ disk=/dev/sda
++++ echo '/dev/sda 117533835264 2499805184 primary none /dev/sda3'
++++ cut -d ' ' -f 6
+++ name=/dev/sda3
+++ add_dependency /dev/sda3 /dev/sda
+++ echo '/dev/sda3 /dev/sda'
+++ add_component /dev/sda3 part
+++ echo 'todo /dev/sda3 part'
+++ read type remainder
+++ case $type in
++++ echo '/dev/sdb 1000204886016 gpt'
++++ cut -d ' ' -f 1
+++ name=/dev/sdb
+++ add_component /dev/sdb disk
+++ echo 'todo /dev/sdb disk'
+++ read type remainder
+++ case $type in
++++ echo '/dev/sdb 1000203091968 1048576 primary none /dev/sdb1'
++++ cut -d ' ' -f 1
+++ disk=/dev/sdb
++++ echo '/dev/sdb 1000203091968 1048576 primary none /dev/sdb1'
++++ cut -d ' ' -f 6
+++ name=/dev/sdb1
+++ add_dependency /dev/sdb1 /dev/sdb
+++ echo '/dev/sdb1 /dev/sdb'
+++ add_component /dev/sdb1 part
+++ echo 'todo /dev/sdb1 part'
+++ read type remainder
+++ case $type in
++++ echo '/dev/dm-0 / btrfs uuid=72008e29-a62f-4333-ade0-5e3c7bb0efc2 label= options=rw,noatime,nodiratime,ssd,space_cache'
++++ cut -d ' ' -f 1
+++ dev=/dev/dm-0
++++ echo '/dev/dm-0 / btrfs uuid=72008e29-a62f-4333-ade0-5e3c7bb0efc2 label= options=rw,noatime,nodiratime,ssd,space_cache'
++++ cut -d ' ' -f 2
+++ mp=/
+++ add_dependency fs:/ /dev/dm-0
+++ echo 'fs:/ /dev/dm-0'
+++ add_component fs:/ fs
+++ echo 'todo fs:/ fs'
+++ read fs bd nmp junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ '[' / '!=' / ']'
+++ temp_nmp=/
+++ '[' '' '!=' / ']'
+++ '[' / '!=' / ']'
+++ read fs bd nmp junk
+++ '[' /boot '!=' / ']'
+++ temp_nmp=/boot/
+++ '[' / '!=' / ']'
+++ read fs bd nmp junk
+++ '[' /media/DMNAME '!=' / ']'
+++ temp_nmp=/media/DMNAME/
+++ '[' / '!=' / ']'
+++ read fs bd nmp junk
+++ read type remainder
+++ case $type in
++++ echo '/dev/sda1 /boot ext4 uuid=308700cb-7c8f-4cec-9d21-dbc77ab3858d label= blocksize=1024 reserved_blocks=3% max_mounts=-1 check_interval=0d bytes_per_inode=4077 default_mount_options=user_xattr,acl options=rw,nosuid,nodev,noexec,noatime,nodiratime,data=ordered'
++++ cut -d ' ' -f 1
+++ dev=/dev/sda1
++++ echo '/dev/sda1 /boot ext4 uuid=308700cb-7c8f-4cec-9d21-dbc77ab3858d label= blocksize=1024 reserved_blocks=3% max_mounts=-1 check_interval=0d bytes_per_inode=4077 default_mount_options=user_xattr,acl options=rw,nosuid,nodev,noexec,noatime,nodiratime,data=ordered'
++++ cut -d ' ' -f 2
+++ mp=/boot
+++ add_dependency fs:/boot /dev/sda1
+++ echo 'fs:/boot /dev/sda1'
+++ add_component fs:/boot fs
+++ echo 'todo fs:/boot fs'
+++ read fs bd nmp junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ '[' / '!=' / ']'
+++ temp_nmp=/
+++ '[' boot '!=' /boot ']'
+++ '[' /boot '!=' / ']'
+++ add_dependency fs:/boot fs:/
+++ echo 'fs:/boot fs:/'
+++ read fs bd nmp junk
+++ '[' /boot '!=' / ']'
+++ temp_nmp=/boot/
+++ '[' /boot '!=' /boot ']'
+++ read fs bd nmp junk
+++ '[' /media/DMNAME '!=' / ']'
+++ temp_nmp=/media/DMNAME/
+++ '[' /boot '!=' /boot ']'
+++ read fs bd nmp junk
+++ read type remainder
+++ case $type in
++++ echo '/dev/mapper/DMNAME /media/DMNAME btrfs uuid=634c136c-5bab-47ea-bc88-20077302cecf label= options=rw,nosuid,nodev,noatime,nodiratime,space_cache'
++++ cut -d ' ' -f 1
+++ dev=/dev/mapper/DMNAME
++++ echo '/dev/mapper/DMNAME /media/DMNAME btrfs uuid=634c136c-5bab-47ea-bc88-20077302cecf label= options=rw,nosuid,nodev,noatime,nodiratime,space_cache'
++++ cut -d ' ' -f 2
+++ mp=/media/DMNAME
+++ add_dependency fs:/media/DMNAME /dev/mapper/DMNAME
+++ echo 'fs:/media/DMNAME /dev/mapper/DMNAME'
+++ add_component fs:/media/DMNAME fs
+++ echo 'todo fs:/media/DMNAME fs'
+++ read fs bd nmp junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ '[' / '!=' / ']'
+++ temp_nmp=/
+++ '[' media/DMNAME '!=' /media/DMNAME ']'
+++ '[' /media/DMNAME '!=' / ']'
+++ add_dependency fs:/media/DMNAME fs:/
+++ echo 'fs:/media/DMNAME fs:/'
+++ read fs bd nmp junk
+++ '[' /boot '!=' / ']'
+++ temp_nmp=/boot/
+++ '[' /media/DMNAME '!=' /media/DMNAME ']'
+++ read fs bd nmp junk
+++ '[' /media/DMNAME '!=' / ']'
+++ temp_nmp=/media/DMNAME/
+++ '[' /media/DMNAME '!=' /media/DMNAME ']'
+++ read fs bd nmp junk
+++ read type remainder
+++ case $type in
++++ echo '/dev/mapper/sda2_crypt uuid=fa3ec123-e1c6-44d7-a38c-aa0623b2d436 label='
++++ cut -d ' ' -f 1
+++ dev=/dev/mapper/sda2_crypt
+++ add_dependency swap:/dev/mapper/sda2_crypt /dev/mapper/sda2_crypt
+++ echo 'swap:/dev/mapper/sda2_crypt /dev/mapper/sda2_crypt'
+++ add_component swap:/dev/mapper/sda2_crypt swap
+++ echo 'todo swap:/dev/mapper/sda2_crypt swap'
+++ read type remainder
+++ case $type in
++++ echo '/dev/mapper/sda3_crypt /dev/sda3 cipher=aes mode=xts-plain64 hash=sha1 uuid=2be2e1ec-c91f-464f-a296-28ff54c49a77'
++++ cut -d ' ' -f 1
+++ name=/dev/mapper/sda3_crypt
++++ echo '/dev/mapper/sda3_crypt /dev/sda3 cipher=aes mode=xts-plain64 hash=sha1 uuid=2be2e1ec-c91f-464f-a296-28ff54c49a77'
++++ cut -d ' ' -f 2
+++ device=/dev/sda3
+++ add_dependency /dev/mapper/sda3_crypt /dev/sda3
+++ echo '/dev/mapper/sda3_crypt /dev/sda3'
+++ add_component /dev/mapper/sda3_crypt crypt
+++ echo 'todo /dev/mapper/sda3_crypt crypt'
+++ read type remainder
+++ case $type in
++++ echo '/dev/mapper/DMNAME /dev/sdb1 cipher=aes mode=xts-plain64 hash=sha1 uuid=de06ca54-2775-4b8d-9ce6-71636b4daa6d'
++++ cut -d ' ' -f 1
+++ name=/dev/mapper/DMNAME
++++ echo '/dev/mapper/DMNAME /dev/sdb1 cipher=aes mode=xts-plain64 hash=sha1 uuid=de06ca54-2775-4b8d-9ce6-71636b4daa6d'
++++ cut -d ' ' -f 2
+++ device=/dev/sdb1
+++ add_dependency /dev/mapper/DMNAME /dev/sdb1
+++ echo '/dev/mapper/DMNAME /dev/sdb1'
+++ add_component /dev/mapper/DMNAME crypt
+++ echo 'todo /dev/mapper/DMNAME crypt'
+++ read type remainder
++ test 1
++ set +x
+2014-06-25 21:10:29.420074008 Including layout/save/default/31_include_exclude.sh
++ . /usr/share/rear/layout/save/default/31_include_exclude.sh
+++ '[' 0 -gt 0 ']'
++ test 1
++ set +x
+2014-06-25 21:10:29.421473857 Including layout/save/default/32_autoexclude.sh
++ . /usr/share/rear/layout/save/default/32_autoexclude.sh
+++ [[ y =~ ^[yY1] ]]
+++ read multipath device devices junk
++++ grep '^multipath' /var/lib/rear/layout/disklayout.conf
+++ [[ -n /media ]]
+++ for exclude in '"${AUTOEXCLUDE_PATH[@]}"'
+++ read fs device mountpoint junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ [[ / != \/ ]]
+++ read fs device mountpoint junk
+++ [[ /boot != \/\b\o\o\t ]]
+++ read fs device mountpoint junk
+++ [[ DMNAME != \/\m\e\d\i\a\/\9\f\H\p ]]
+++ Log 'Automatically excluding filesystem /media/DMNAME.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.424755453 Automatically excluding filesystem /media/DMNAME.'
+2014-06-25 21:10:29.424755453 Automatically excluding filesystem /media/DMNAME.
+++ mark_as_done fs:/media/DMNAME
+++ Debug 'Marking fs:/media/DMNAME as done.'
+++ test 1
+++ Log 'Marking fs:/media/DMNAME as done.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.426042182 Marking fs:/media/DMNAME as done.'
+2014-06-25 21:10:29.426042182 Marking fs:/media/DMNAME as done.
+++ sed -i 's;todo\ fs:/media/DMNAME\ ;done\ fs:/media/DMNAME\ ;' /var/lib/rear/layout/disktodo.conf
+++ mark_tree_as_done fs:/media/DMNAME
++++ get_child_components fs:/media/DMNAME
++++ declare -a devlist children
++++ declare current child parent
++++ devlist=("$1")
++++ ((  1  ))
++++ current=fs:/media/DMNAME
++++ read child parent junk
++++ [[ /dev/sda = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sdb = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/dm-0 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda2_crypt = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  0  ))
++++ declare component type
+++ read fs device mountpoint junk
+++ for exclude in '"${AUTOEXCLUDE_PATH[@]}"'
+++ read fs device mountpoint junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ [[ / != \/ ]]
+++ read fs device mountpoint junk
+++ [[ /boot != \/\b\o\o\t ]]
+++ read fs device mountpoint junk
+++ [[ /media/DMNAME != \/\m\e\d\i\a\/\9\f\H\p ]]
+++ read fs device mountpoint junk
+++ [[ y =~ ^[yY1] ]]
+++ used_disks=()
+++ read fs device mountpoint junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ IsInArray /
+++ local needle=/
+++ shift
+++ [[ / == '' ]]
+++ shift
+++ return 1
+++ grep -q '^done fs:/ ' /var/lib/rear/layout/disktodo.conf
++++ find_disk fs:/
++++ get_parent_components fs:/ disk
++++ declare -a ancestors devlist
++++ declare current child parent
++++ devlist=("$1")
++++ ((  1  ))
++++ current=fs:/
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/ ]]
++++ IsInArray /dev/dm-0
++++ local needle=/dev/dm-0
++++ shift
++++ [[ /dev/dm-0 == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  1  ))
++++ current=/dev/dm-0
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  0  ))
++++ declare component type
++++ for component in '"${ancestors[@]}"'
++++ [[ -n disk ]]
+++++ get_component_type /dev/dm-0
+++++ grep -E '^[^ ]+ /dev/dm-0 ' /var/lib/rear/layout/disktodo.conf
+++++ cut -d ' ' -f 3
++++ type=
++++ [[ '' != \d\i\s\k ]]
++++ continue
+++ disks=
+++ read fs device mountpoint junk
+++ IsInArray /boot
+++ local needle=/boot
+++ shift
+++ [[ /boot == '' ]]
+++ shift
+++ return 1
+++ grep -q '^done fs:/boot ' /var/lib/rear/layout/disktodo.conf
++++ find_disk fs:/boot
++++ get_parent_components fs:/boot disk
++++ declare -a ancestors devlist
++++ declare current child parent
++++ devlist=("$1")
++++ ((  1  ))
++++ current=fs:/boot
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/\b\o\o\t ]]
++++ IsInArray /dev/sda1
++++ local needle=/dev/sda1
++++ shift
++++ [[ /dev/sda1 == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/\b\o\o\t ]]
++++ IsInArray fs:/ /dev/sda1
++++ local needle=fs:/
++++ shift
++++ [[ fs:/ == \/\d\e\v\/\s\d\a\1 ]]
++++ shift
++++ [[ fs:/ == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  2  ))
++++ current=/dev/sda1
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\s\d\a\1 ]]
++++ IsInArray /dev/sda /dev/sda1 fs:/
++++ local needle=/dev/sda
++++ shift
++++ [[ /dev/sda == \/\d\e\v\/\s\d\a\1 ]]
++++ shift
++++ [[ /dev/sda == \f\s\:\/ ]]
++++ shift
++++ [[ /dev/sda == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  2  ))
++++ current=fs:/
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/ ]]
++++ IsInArray /dev/dm-0 /dev/sda1 fs:/ /dev/sda
++++ local needle=/dev/dm-0
++++ shift
++++ [[ /dev/dm-0 == \/\d\e\v\/\s\d\a\1 ]]
++++ shift
++++ [[ /dev/dm-0 == \f\s\:\/ ]]
++++ shift
++++ [[ /dev/dm-0 == \/\d\e\v\/\s\d\a ]]
++++ shift
++++ [[ /dev/dm-0 == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  2  ))
++++ current=/dev/sda
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  1  ))
++++ current=/dev/dm-0
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  0  ))
++++ declare component type
++++ for component in '"${ancestors[@]}"'
++++ [[ -n disk ]]
+++++ get_component_type /dev/sda1
+++++ grep -E '^[^ ]+ /dev/sda1 ' /var/lib/rear/layout/disktodo.conf
+++++ cut -d ' ' -f 3
++++ type=part
++++ [[ part != \d\i\s\k ]]
++++ continue
++++ for component in '"${ancestors[@]}"'
++++ [[ -n disk ]]
+++++ get_component_type fs:/
+++++ grep -E '^[^ ]+ fs:/ ' /var/lib/rear/layout/disktodo.conf
+++++ cut -d ' ' -f 3
++++ type=fs
++++ [[ fs != \d\i\s\k ]]
++++ continue
++++ for component in '"${ancestors[@]}"'
++++ [[ -n disk ]]
+++++ get_component_type /dev/sda
+++++ grep -E '^[^ ]+ /dev/sda ' /var/lib/rear/layout/disktodo.conf
+++++ cut -d ' ' -f 3
++++ type=disk
++++ [[ disk != \d\i\s\k ]]
++++ echo /dev/sda
++++ for component in '"${ancestors[@]}"'
++++ [[ -n disk ]]
+++++ get_component_type /dev/dm-0
+++++ grep -E '^[^ ]+ /dev/dm-0 ' /var/lib/rear/layout/disktodo.conf
+++++ cut -d ' ' -f 3
++++ type=
++++ [[ '' != \d\i\s\k ]]
++++ continue
+++ disks=/dev/sda
+++ for disk in '$disks'
+++ IsInArray /dev/sda
+++ local needle=/dev/sda
+++ shift
+++ [[ /dev/sda == '' ]]
+++ shift
+++ return 1
+++ used_disks=("${used_disks[@]}" "$disk")
+++ read fs device mountpoint junk
+++ IsInArray /media/DMNAME
+++ local needle=/media/DMNAME
+++ shift
+++ [[ /media/DMNAME == '' ]]
+++ shift
+++ return 1
+++ grep -q '^done fs:/media/DMNAME ' /var/lib/rear/layout/disktodo.conf
+++ continue
+++ read fs device mountpoint junk
+++ read disk name junk
++++ grep '^disk' /var/lib/rear/layout/disklayout.conf
+++ IsInArray /dev/sda /dev/sda
+++ local needle=/dev/sda
+++ shift
+++ [[ /dev/sda == \/\d\e\v\/\s\d\a ]]
+++ return 0
+++ read disk name junk
+++ IsInArray /dev/sdb /dev/sda
+++ local needle=/dev/sdb
+++ shift
+++ [[ /dev/sdb == \/\d\e\v\/\s\d\a ]]
+++ shift
+++ [[ /dev/sdb == '' ]]
+++ shift
+++ return 1
+++ Log 'Disk /dev/sdb is not used by any mounted filesystem. Excluding.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.446637493 Disk /dev/sdb is not used by any mounted filesystem. Excluding.'
+2014-06-25 21:10:29.446637493 Disk /dev/sdb is not used by any mounted filesystem. Excluding.
+++ mark_as_done /dev/sdb
+++ Debug 'Marking /dev/sdb as done.'
+++ test 1
+++ Log 'Marking /dev/sdb as done.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.447714975 Marking /dev/sdb as done.'
+2014-06-25 21:10:29.447714975 Marking /dev/sdb as done.
+++ sed -i 's;todo\ /dev/sdb\ ;done\ /dev/sdb\ ;' /var/lib/rear/layout/disktodo.conf
+++ mark_tree_as_done /dev/sdb
++++ get_child_components /dev/sdb
++++ declare -a devlist children
++++ declare current child parent
++++ devlist=("$1")
++++ ((  1  ))
++++ current=/dev/sdb
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/sdb = \/\d\e\v\/\s\d\b ]]
++++ IsInArray /dev/sdb1
++++ local needle=/dev/sdb1
++++ shift
++++ [[ /dev/sdb1 == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$child")
++++ children=("${children[@]}" "$child")
++++ read child parent junk
++++ [[ /dev/dm-0 = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda2_crypt = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\s\d\b ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  1  ))
++++ current=/dev/sdb1
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/sdb = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/dm-0 = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda2_crypt = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\s\d\b\1 ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\s\d\b\1 ]]
++++ IsInArray /dev/mapper/DMNAME /dev/sdb1
++++ local needle=/dev/mapper/DMNAME
++++ shift
++++ [[ /dev/mapper/DMNAME == \/\d\e\v\/\s\d\b\1 ]]
++++ shift
++++ [[ /dev/mapper/DMNAME == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$child")
++++ children=("${children[@]}" "$child")
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  1  ))
++++ current=/dev/mapper/DMNAME
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sdb = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/dm-0 = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ IsInArray fs:/media/DMNAME /dev/sdb1 /dev/mapper/DMNAME
++++ local needle=fs:/media/DMNAME
++++ shift
++++ [[ fs:/media/DMNAME == \/\d\e\v\/\s\d\b\1 ]]
++++ shift
++++ [[ fs:/media/DMNAME == \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ shift
++++ [[ fs:/media/DMNAME == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$child")
++++ children=("${children[@]}" "$child")
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda2_crypt = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\m\a\p\p\e\r\/\9\f\H\p ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  1  ))
++++ current=fs:/media/DMNAME
++++ read child parent junk
++++ [[ /dev/sda = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sdb = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/dm-0 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda2_crypt = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/\m\e\d\i\a\/\9\f\H\p ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  0  ))
++++ declare component type
++++ for component in '"${children[@]}"'
++++ [[ -n '' ]]
++++ echo /dev/sdb1
++++ for component in '"${children[@]}"'
++++ [[ -n '' ]]
++++ echo /dev/mapper/DMNAME
++++ for component in '"${children[@]}"'
++++ [[ -n '' ]]
++++ echo fs:/media/DMNAME
+++ for component in '$(get_child_components "$1")'
+++ Debug 'Marking /dev/sdb1 as done (dependent on /dev/sdb)'
+++ test 1
+++ Log 'Marking /dev/sdb1 as done (dependent on /dev/sdb)'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.451888271 Marking /dev/sdb1 as done (dependent on /dev/sdb)'
+2014-06-25 21:10:29.451888271 Marking /dev/sdb1 as done (dependent on /dev/sdb)
+++ mark_as_done /dev/sdb1
+++ Debug 'Marking /dev/sdb1 as done.'
+++ test 1
+++ Log 'Marking /dev/sdb1 as done.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.453017504 Marking /dev/sdb1 as done.'
+2014-06-25 21:10:29.453017504 Marking /dev/sdb1 as done.
+++ sed -i 's;todo\ /dev/sdb1\ ;done\ /dev/sdb1\ ;' /var/lib/rear/layout/disktodo.conf
+++ for component in '$(get_child_components "$1")'
+++ Debug 'Marking /dev/mapper/DMNAME as done (dependent on /dev/sdb)'
+++ test 1
+++ Log 'Marking /dev/mapper/DMNAME as done (dependent on /dev/sdb)'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.455113206 Marking /dev/mapper/DMNAME as done (dependent on /dev/sdb)'
+2014-06-25 21:10:29.455113206 Marking /dev/mapper/DMNAME as done (dependent on /dev/sdb)
+++ mark_as_done /dev/mapper/DMNAME
+++ Debug 'Marking /dev/mapper/DMNAME as done.'
+++ test 1
+++ Log 'Marking /dev/mapper/DMNAME as done.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.456220516 Marking /dev/mapper/DMNAME as done.'
+2014-06-25 21:10:29.456220516 Marking /dev/mapper/DMNAME as done.
+++ sed -i 's;todo\ /dev/mapper/DMNAME\ ;done\ /dev/mapper/DMNAME\ ;' /var/lib/rear/layout/disktodo.conf
+++ for component in '$(get_child_components "$1")'
+++ Debug 'Marking fs:/media/DMNAME as done (dependent on /dev/sdb)'
+++ test 1
+++ Log 'Marking fs:/media/DMNAME as done (dependent on /dev/sdb)'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.458334040 Marking fs:/media/DMNAME as done (dependent on /dev/sdb)'
+2014-06-25 21:10:29.458334040 Marking fs:/media/DMNAME as done (dependent on /dev/sdb)
+++ mark_as_done fs:/media/DMNAME
+++ Debug 'Marking fs:/media/DMNAME as done.'
+++ test 1
+++ Log 'Marking fs:/media/DMNAME as done.'
+++ test 1 -gt 0
++++ Stamp
++++ date '+%Y-%m-%d %H:%M:%S.%N '
+++ echo '2014-06-25 21:10:29.459420865 Marking fs:/media/DMNAME as done.'
+2014-06-25 21:10:29.459420865 Marking fs:/media/DMNAME as done.
+++ sed -i 's;todo\ fs:/media/DMNAME\ ;done\ fs:/media/DMNAME\ ;' /var/lib/rear/layout/disktodo.conf
+++ read disk name junk
+++ read multipath device slaves junk
++++ grep '^multipath' /var/lib/rear/layout/disklayout.conf
+++ [[ -n '' ]]
++ test 1
++ set +x
+2014-06-25 21:10:29.462811200 Including layout/save/default/33_remove_exclusions.sh
++ . /usr/share/rear/layout/save/default/33_remove_exclusions.sh
+++ '[' -s /var/lib/rear/layout/disktodo.conf ']'
+++ read done name type junk
++++ grep '^done' /var/lib/rear/layout/disktodo.conf
+++ case "$type" in
+++ remove_component disk /dev/sdb
+++ sed -i 's|^disk /dev/sdb |\#disk /dev/sdb |' /var/lib/rear/layout/disklayout.conf
+++ read done name type junk
+++ case "$type" in
++++ grep '^/dev/sdb1 ' /var/lib/rear/layout/diskdeps.conf
++++ cut -d ' ' -f 2
+++ name=/dev/sdb
+++ remove_component part /dev/sdb
+++ sed -i 's|^part /dev/sdb |\#part /dev/sdb |' /var/lib/rear/layout/disklayout.conf
+++ read done name type junk
+++ case "$type" in
+++ name=/media/DMNAME
+++ remove_second_component fs /media/DMNAME
+++ sed -i -r 's|^fs ([^ ]+) /media/DMNAME |\#fs \1 /media/DMNAME |' /var/lib/rear/layout/disklayout.conf
+++ read done name type junk
+++ case "$type" in
+++ remove_component crypt /dev/mapper/DMNAME
+++ sed -i 's|^crypt /dev/mapper/DMNAME |\#crypt /dev/mapper/DMNAME |' /var/lib/rear/layout/disklayout.conf
+++ read done name type junk
+++ read status name junk
++++ grep -E '^done [^ ]+ lvmgrp' /var/lib/rear/layout/disktodo.conf
++ test 1
++ set +x
+2014-06-25 21:10:29.472807207 Including layout/save/default/34_generate_mountpoint_device.sh
++ . /usr/share/rear/layout/save/default/34_generate_mountpoint_device.sh
+++ excluded_mountpoints=()
+++ read fs device mountpoint junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ IsInArray fs:/
+++ local needle=fs:/
+++ shift
+++ [[ fs:/ == '' ]]
+++ shift
+++ return 1
++++ get_parent_components fs:/
++++ sort -u
++++ declare -a ancestors devlist
++++ declare current child parent
++++ devlist=("$1")
++++ ((  1  ))
++++ current=fs:/
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/ ]]
++++ IsInArray /dev/dm-0
++++ local needle=/dev/dm-0
++++ shift
++++ [[ /dev/dm-0 == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  1  ))
++++ current=/dev/dm-0
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  0  ))
++++ declare component type
++++ for component in '"${ancestors[@]}"'
++++ [[ -n '' ]]
++++ echo /dev/dm-0
+++ for component in '$(get_parent_components "fs:$mountpoint" | sort -u)'
+++ IsInArray /dev/dm-0
+++ local needle=/dev/dm-0
+++ shift
+++ [[ /dev/dm-0 == '' ]]
+++ shift
+++ return 1
+++ read fs device mountpoint junk
+++ IsInArray fs:/boot
+++ local needle=fs:/boot
+++ shift
+++ [[ fs:/boot == '' ]]
+++ shift
+++ return 1
++++ get_parent_components fs:/boot
++++ sort -u
++++ declare -a ancestors devlist
++++ declare current child parent
++++ devlist=("$1")
++++ ((  1  ))
++++ current=fs:/boot
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/\b\o\o\t ]]
++++ IsInArray /dev/sda1
++++ local needle=/dev/sda1
++++ shift
++++ [[ /dev/sda1 == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/\b\o\o\t ]]
++++ IsInArray fs:/ /dev/sda1
++++ local needle=fs:/
++++ shift
++++ [[ fs:/ == \/\d\e\v\/\s\d\a\1 ]]
++++ shift
++++ [[ fs:/ == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/\b\o\o\t ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  2  ))
++++ current=/dev/sda1
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\s\d\a\1 ]]
++++ IsInArray /dev/sda /dev/sda1 fs:/
++++ local needle=/dev/sda
++++ shift
++++ [[ /dev/sda == \/\d\e\v\/\s\d\a\1 ]]
++++ shift
++++ [[ /dev/sda == \f\s\:\/ ]]
++++ shift
++++ [[ /dev/sda == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\s\d\a\1 ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  2  ))
++++ current=fs:/
++++ read child parent junk
++++ [[ /dev/sda1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/ = \f\s\:\/ ]]
++++ IsInArray /dev/dm-0 /dev/sda1 fs:/ /dev/sda
++++ local needle=/dev/dm-0
++++ shift
++++ [[ /dev/dm-0 == \/\d\e\v\/\s\d\a\1 ]]
++++ shift
++++ [[ /dev/dm-0 == \f\s\:\/ ]]
++++ shift
++++ [[ /dev/dm-0 == \/\d\e\v\/\s\d\a ]]
++++ shift
++++ [[ /dev/dm-0 == '' ]]
++++ shift
++++ return 1
++++ devlist=("${devlist[@]}" "$parent")
++++ ancestors=("${ancestors[@]}" "$parent")
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/boot = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \f\s\:\/ ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \f\s\:\/ ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  2  ))
++++ current=/dev/sda
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\s\d\a ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  1  ))
++++ current=/dev/dm-0
++++ read child parent junk
++++ [[ /dev/sda1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda2 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sda3 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/sdb1 = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/ = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/boot = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ fs:/media/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ swap:/dev/mapper/sda2_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/sda3_crypt = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ [[ /dev/mapper/DMNAME = \/\d\e\v\/\d\m\-\0 ]]
++++ read child parent junk
++++ unset 'devlist[0]'
++++ devlist=("${devlist[@]}")
++++ ((  0  ))
++++ declare component type
++++ for component in '"${ancestors[@]}"'
++++ [[ -n '' ]]
++++ echo /dev/sda1
++++ for component in '"${ancestors[@]}"'
++++ [[ -n '' ]]
++++ echo fs:/
++++ for component in '"${ancestors[@]}"'
++++ [[ -n '' ]]
++++ echo /dev/sda
++++ for component in '"${ancestors[@]}"'
++++ [[ -n '' ]]
++++ echo /dev/dm-0
+++ for component in '$(get_parent_components "fs:$mountpoint" | sort -u)'
+++ IsInArray /dev/dm-0
+++ local needle=/dev/dm-0
+++ shift
+++ [[ /dev/dm-0 == '' ]]
+++ shift
+++ return 1
+++ for component in '$(get_parent_components "fs:$mountpoint" | sort -u)'
+++ IsInArray /dev/sda
+++ local needle=/dev/sda
+++ shift
+++ [[ /dev/sda == '' ]]
+++ shift
+++ return 1
+++ for component in '$(get_parent_components "fs:$mountpoint" | sort -u)'
+++ IsInArray /dev/sda1
+++ local needle=/dev/sda1
+++ shift
+++ [[ /dev/sda1 == '' ]]
+++ shift
+++ return 1
+++ for component in '$(get_parent_components "fs:$mountpoint" | sort -u)'
+++ IsInArray fs:/
+++ local needle=fs:/
+++ shift
+++ [[ fs:/ == '' ]]
+++ shift
+++ return 1
+++ read fs device mountpoint junk
+++ read fs device mountpoint junk
++++ grep '^fs' /var/lib/rear/layout/disklayout.conf
+++ IsInArray /
+++ local needle=/
+++ shift
+++ [[ / == '' ]]
+++ shift
+++ return 1
+++ echo '/ /dev/dm-0'
+++ read fs device mountpoint junk
+++ IsInArray /boot
+++ local needle=/boot
+++ shift
+++ [[ /boot == '' ]]
+++ shift
+++ return 1
+++ echo '/boot /dev/sda1'
+++ read fs device mountpoint junk
++ test 1
++ set +x
+2014-06-25 21:10:29.483309491 Including layout/save/GNU/Linux/35_copy_drbdtab.sh
++ . /usr/share/rear/layout/save/GNU/Linux/35_copy_drbdtab.sh
+++ '[' -e /etc/drbdtab ']'
++ test 1
++ set +x
+2014-06-25 21:10:29.484616584 Including layout/save/default/40_check_backup_special_files.sh
++ . /usr/share/rear/layout/save/default/40_check_backup_special_files.sh
+++ case $BACKUP in
++ test 1
++ set +x
+2014-06-25 21:10:29.485925541 Including layout/save/default/45_check_bootloader_files.sh
++ . /usr/share/rear/layout/save/default/45_check_bootloader_files.sh
++++ cat /var/lib/rear/recovery/bootloader
+++ myBOOTloader=GRUB
+++ case $myBOOTloader in
+++ CHECK_CONFIG_FILES=(${CHECK_CONFIG_FILES[@]} /etc/grub.cfg /etc/grub2.cfg /boot/grub2/grub2.cfg /boot/grub/grub.cfg)
++ test 1
++ set +x
+2014-06-25 21:10:29.488529805 Including layout/save/default/45_check_network_files.sh
++ . /usr/share/rear/layout/save/default/45_check_network_files.sh
+++ [[ -d /etc/sysconfig/network ]]
+++ [[ -d /etc/sysconfig/network-scripts ]]
+++ [[ -d /etc/network ]]
+++ CHECK_CONFIG_FILES=(${CHECK_CONFIG_FILES[@]} /etc/network/interfaces)
++ test 1
++ set +x
+2014-06-25 21:10:29.489988155 Including layout/save/GNU/Linux/50_extract_vgcfg.sh
++ . /usr/share/rear/layout/save/GNU/Linux/50_extract_vgcfg.sh
+++ has_binary lvm
+++ for bin in '$@'
+++ type lvm
+++ return 0
+++ mkdir -p -v /var/lib/rear/layout/lvm
+++ lvm vgcfgbackup -f /var/lib/rear/layout/lvm/%s.cfg
+  No volume groups found
++ test 1
++ set +x
+2014-06-25 21:10:29.502378825 Including layout/save/GNU/Linux/51_current_disk_usage.sh
++ . /usr/share/rear/layout/save/GNU/Linux/51_current_disk_usage.sh
+++ df -Plh
+++ grep -vP '^(encfs)'
++ test 1
++ set +x
+2014-06-25 21:10:39.503936381 Including layout/save/default/60_snapshot_files.sh
++ . /usr/share/rear/layout/save/default/60_snapshot_files.sh
+++ '[' savelayout = checklayout ']'
+++ config_files=()
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/drbd/ ']'
+++ '[' -e /etc/drbd/ ']'
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/drbd.conf ']'
+++ '[' -e /etc/drbd.conf ']'
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/lvm/lvm.conf ']'
+++ '[' -e /etc/lvm/lvm.conf ']'
+++ config_files=("${config_files[@]}" "$obj")
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/multipath.conf ']'
+++ '[' -e /etc/multipath.conf ']'
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/rear/ ']'
+++ config_files=("${config_files[@]}" $(find "$obj" -type f))
++++ find /etc/rear/ -type f
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/udev/udev.conf ']'
+++ '[' -e /etc/udev/udev.conf ']'
+++ config_files=("${config_files[@]}" "$obj")
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/grub.cfg ']'
+++ '[' -e /etc/grub.cfg ']'
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/grub2.cfg ']'
+++ '[' -e /etc/grub2.cfg ']'
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /boot/grub2/grub2.cfg ']'
+++ '[' -e /boot/grub2/grub2.cfg ']'
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /boot/grub/grub.cfg ']'
+++ '[' -e /boot/grub/grub.cfg ']'
+++ config_files=("${config_files[@]}" "$obj")
+++ for obj in '"${CHECK_CONFIG_FILES[@]}"'
+++ '[' -d /etc/network/interfaces ']'
+++ '[' -e /etc/network/interfaces ']'
+++ config_files=("${config_files[@]}" "$obj")
+++ md5sum /etc/lvm/lvm.conf /etc/rear/pre_recovery_script /etc/rear/site.conf /etc/rear/local.conf /etc/udev/udev.conf /boot/grub/grub.cfg /etc/network/interfaces
++ test 1
++ set +x
+2014-06-25 21:10:39.512099683 Finished running 'layout/save' stage in 11 seconds
+2014-06-25 21:10:39.514189569 Finished running savelayout workflow
+2014-06-25 21:10:39.517282368 Running exit tasks.
+2014-06-25 21:10:39.519937140 Exit task 'cleanup_build_area_and_end_program'
+2014-06-25 21:10:39.521744577 Finished in 11 seconds
+2014-06-25 21:10:39.523583794 You should also rm -Rf /tmp/rear.R6CEf0kWQTDMA0N
+2014-06-25 21:10:39.525207816 End of program reached
+2014-06-25 21:10:39.526783770 Exit task 'exec 8>&-'
+2014-06-25 21:10:39.528519525 Exit task 'exec 7>&-'
